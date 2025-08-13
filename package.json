@@ -1,16 +1,6 @@
-version: 2
-updates:
-  - package-ecosystem: "npm"
-    directory: "/"
-    versioning-strategy: "increase"
-    schedule:
-      interval: "daily"
-    registries:
-      - jfrog-artifactroy
-
-registries:
-  jfrog-artifactroy:
-    type: "npm-registry"
-    url: "jfrogghdemo.jfrog.io/artifactory/api/npm/db-dependabot-local/"
-    token: "${{secrets.JFROG_ARTIFACTORY_TOKEN}}"
-    replaces-base: true
+{
+    "packageManager": "pnpm@10.14.0",
+    "dependencies": {
+        "lodash": "^4.17.1"
+    }
+}
