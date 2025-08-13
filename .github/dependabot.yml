@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    versioning-strategy: "increase"
+    schedule:
+      interval: "daily"
+    registries:
+      - jfrog-artifactroy
+    ignore:
+      - dependency-name: "lod*"
+
+registries:
+  jfrog-artifactroy:
+    type: "npm-registry"
+    url: "jfrogghdemo.jfrog.io/artifactory/api/npm/db-dependabot-local/"
+    token: "${{secrets.JFROG_ARTIFACTORY_TOKEN}}"
+    replaces-base: true
